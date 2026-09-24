@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export default function ForgotPasswordPage() {
+  const loginPath = undefined;
+
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center px-6 py-16 bg-zinc-950">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0a1a2a]/20 via-zinc-950 to-zinc-950 pointer-events-none" />
@@ -12,7 +14,7 @@ export default function ForgotPasswordPage() {
         </p>
 
         <Link
-          href="/login"
+          href={loginPath}
           className="inline-block rounded-xl bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 px-6 py-3 text-sm font-semibold text-zinc-200 transition-colors"
         >
           ← Back to log in
