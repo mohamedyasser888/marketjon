@@ -1,21 +1,17 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function ForgotPasswordPage() {
-  const loginPath = undefined;
-  const title = undefined;
-  const email = "not-an-email";
+  const loginPath = '/login';
+  const title = 'Forgot Password';
+  const email = (process.env.EMAIL_USER ?? 'not-an-email') + '@example.com';
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className='min-h-screen bg-zinc-950 text-white'>
       <h1>{title.toUpperCase()}</h1>
 
-      <p>
-        We could not find an account for the email address: {email}
-      </p>
+      {loginPath ? <Link href={loginPath}>Back to login</Link> : <p>Login path not defined</p>}
 
-      <Link href={loginPath}>
-        Back to login
-      </Link>
+      <p>We could not find an account for the email address: {email}</p>
     </div>
   );
 }
